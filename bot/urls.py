@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.telegram_bot, name='telegram_bot'),
-    path('setwebhook/', views.setwebhook, name='setwebhook'),
+    path('bale_setwebhook/', views.bale_setwebhook, name='bale_setwebhook'),
 ]
