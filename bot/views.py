@@ -30,12 +30,12 @@ def help(message):
         'chat_id': chat_id,
         'text' :"asdasd",
         'reply_markup': {
-          'keyboard': {
+          'keyboard': [
             {
               'text': "test",
 
             },
-          }
+          ]
         }
       }
     )
@@ -94,7 +94,7 @@ def ip_address(message):
   '''
   send("sendMessage", {
         'chat_id': chat_id,
-        'text': f"کشور: {req['country']}\ncity: {req['city']}",
+        'text': f"کشور: {req['country']}\شهر: {req['city']}",
         'reply_to_message_id': message['message']['message_id'],
         })
   send("sendLocation", {
