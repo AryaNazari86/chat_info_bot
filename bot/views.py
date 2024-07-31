@@ -18,7 +18,7 @@ def telegram_bot(request):
       return HttpResponse('ok')
     
     info(message)
-    help(message)
+    #help(message)
     
   return HttpResponse('ok')
 
