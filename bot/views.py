@@ -13,9 +13,11 @@ def telegram_bot(request):
       start(message)
       return HttpResponse('ok')
     
-    if message['message']['text'][0:3] == '/ip':
+    elif message['message']['text'][0:3] == '/ip':
       ip_address(message)
       return HttpResponse('ok')
+    elif message['message']['text'] == '/help':
+      help(message)
     
     info(message)
     #help(message)
@@ -112,7 +114,7 @@ def start(message):
         })
 
 def bale_setwebhook(request):
-  response = requests.post(API_URL+ "setWebhook?url=" + URL).json()
+  response = requests.post(API_URL+ "setWebhook?url=" + request.build_absolute_uri('/')).json()
   return HttpResponse(f"{response}")
 
 def send(method, data):
